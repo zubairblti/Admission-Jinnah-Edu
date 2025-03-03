@@ -1,0 +1,54 @@
+{
+	"name": "basethemevar",
+	"description": "basetheme",
+	"version": "1.0.0",
+	"main": "gulpfile.js",
+	"author": "Glide Design (https://glidedesign.com)",
+	"license": "MIT",
+	"directories": {
+		"doc": "docs"
+	},
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"scripts": {
+		"start": "gulp",
+		"zip": "gulp zip",
+    "lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js"
+	},
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "^12.5.0",
+		"@wordpress/scripts": "^23.3.0",
+		"@wordpress/stylelint-config": "^20.0.2",
+		"autoprefixer": "^10.4.0",
+		"beepbeep": "^1.3.0",
+		"browser-sync": "^2.27.7",
+		"eslint-plugin-html": "^6.2.0",
+		"gulp": "^4.0.2",
+		"gulp-concat": "^2.6.1",
+		"gulp-count": "^1.0.0",
+		"gulp-cssnano": "^2.1.3",
+		"gulp-filter": "^7.0.0",
+		"gulp-line-ending-corrector": "^1.0.3",
+		"gulp-notify": "^4.0.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-postcss": "^9.0.1",
+		"gulp-remember": "^1.0.1",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^5.0.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-zip": "^5.1.0",
+		"gutil": "^1.6.4",
+		"sass": "^1.43.4"
+	},
+	"stylelint": {
+		"extends": "@wordpress/stylelint-config/scss",
+		"rules": {
+			"no-descending-specificity": null,
+      "color-named": null,
+      "selector-class-pattern": null
+		}
+	}
+}
