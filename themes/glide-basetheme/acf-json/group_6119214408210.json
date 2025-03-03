@@ -1,0 +1,56 @@
+{
+    "key": "group_6119214408210",
+    "title": "Block - Theme Spacer",
+    "fields": [
+        {
+            "key": "field_611921726f444",
+            "label": "",
+            "name": "basethemevar_blk_spacer",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "glide-spacer-block-acf",
+                "id": ""
+            },
+            "choices": {
+                "space-50": "Spacer ( 50px )",
+                "space-60": "Spacer ( 60px )",
+                "space-80": "Spacer ( 80px )",
+                "space-100": "Spacer ( 100px )",
+                "space-120": "Spacer ( 120px )",
+                "space-140": "Spacer ( 140px )",
+                "space-160": "Spacer ( 160px )",
+                "space-200": "Spacer ( 200px )",
+                "space-270": "Spacer ( 270px )"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/spacer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1635320561
+}
