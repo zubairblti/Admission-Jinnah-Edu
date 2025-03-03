@@ -1,0 +1,47 @@
+.hero-home {
+	padding: 100px 0 80px;
+
+	h1 {
+		margin-bottom: 32px;
+	}
+}
+
+.hero-text {
+	max-width: 675px;
+
+	p {
+		font-size: 18px;
+		margin: 0 0 30px;
+		line-height: 1.56;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.hero-content-inner {
+	max-width: 575px;
+	margin-right: 15px;
+	float: right;
+}
+
+.hero-single {
+	padding: 70px 0 60px;
+
+	&.serach-hero {
+		padding-bottom: 60px;
+	}
+}
+
+.blog-hero {
+	padding: 70px 0 60px;
+}
+
+.resource-hero {
+	padding: 70px 0 60px;
+}
+
+.team-hero {
+	padding: 70px 0 60px;
+}

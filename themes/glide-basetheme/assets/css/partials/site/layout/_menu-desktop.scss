@@ -1,0 +1,168 @@
+@media (min-width: 1024px) {
+
+	.header-nav ul li:hover > ul {
+		opacity: 1;
+		visibility: visible;
+		overflow: visible;
+	}
+
+	.header-nav ul ul {
+		animation-delay: 0.6s;
+		opacity: 0;
+		visibility: hidden;
+		overflow: hidden;
+
+		@include transition(all, 0.3s, ease-in-out);
+	}
+}
+
+.header-nav {
+	text-align: center;
+	line-height: 1;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		position: relative;
+
+		li {
+			margin: 0 14px;
+			padding: 0;
+			display: inline-block;
+			position: relative;
+			line-height: 1;
+
+			@include font(axi, reg);
+
+			a,
+			a:visited {
+				padding: 0 0 10px;
+				display: inline-block;
+				line-height: 1;
+				border: 0;
+				position: relative;
+				color: map-get($map: $base_colors, $key: header_nav_color);
+				font-size: 15px;
+
+				@include font(axi, reg);
+
+				&::after {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 1px;
+					bottom: 5px;
+					left: 0;
+					background-color: map-get($map: $base_colors, $key: header_nav_after_bgcolor);
+					opacity: 0.8;
+					transform: scaleX(0);
+					transform-origin: bottom right;
+					transition: transform 0.3s;
+				}
+			}
+
+			&.menu-item-has-children > a {
+				padding-right: 15px;
+				background-position: top 6px right;
+				background-repeat: no-repeat;
+				background-size: 9px;
+				background-image: url(../img/submenu-icon.svg);
+
+				&::after {
+					width: calc(100% - 15px);
+				}
+			}
+
+			&.current-menu-item > a,
+			&.current-menu-parent > a,
+			a:hover {
+				border: 0;
+
+				&::after {
+					transform-origin: bottom left;
+					transform: scaleX(1);
+				}
+			}
+		}
+
+		ul {
+			left: -15px;
+			width: 230px;
+			opacity: 0;
+
+			// box-shadow: 0px 30px 60px rgb(18 27 32 / 0.15);
+			background-color: map-get($map: $base_colors, $key: header_nav_second_ul_bgcolor);
+			visibility: hidden;
+			padding: 20px 0;
+			border-radius: 0;
+			position: absolute;
+			top: 33px;
+			z-index: 9;
+			overflow: hidden;
+			text-align: left;
+
+			@include transition(all, 0.4s, ease-in-out);
+
+			text-align: left;
+
+			li {
+				display: block;
+				margin: 0 0 14px;
+				padding: 0 15px;
+
+				&:last-child {
+					margin: 0;
+				}
+
+				a,
+				a:visited {
+					font-size: 14px;
+					display: inline-block;
+					padding-bottom: 2px;
+					line-height: 1;
+					box-sizing: border-box;
+					position: relative;
+					color: map-get($map: $base_colors, $key: header_nav_second_link_color);
+
+					@include transition(all, 0.3s, ease-in-out);
+					@include font(axi, reg);
+
+					&::after {
+						bottom: -4px;
+					}
+				}
+
+				a:hover {
+					color: map-get($map: $base_colors, $key: header_nav_second_link_color_hover);
+				}
+
+				&.current-menu-item > a,
+				&.current-menu-parent > a,
+				a:hover {
+					border: 0;
+
+					&::after {
+						transform-origin: bottom left;
+						transform: scaleX(1);
+					}
+				}
+			}
+
+			ul {
+				top: -10px;
+				left: 230px;
+
+				&::before {
+					display: none;
+					content: "";
+					width: 1px;
+					height: 1px;
+					position: absolute;
+					top: 12px;
+					left: -5px;
+					margin: auto;
+				}
+			}
+		}
+	}
+}

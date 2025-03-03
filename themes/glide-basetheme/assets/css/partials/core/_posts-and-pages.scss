@@ -1,0 +1,63 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Do not edit these styles
+------------------------------------------------- */
+.sticky {
+	display: block;
+
+
+	.post-title {
+		position: relative;
+		padding-left: 30px;
+
+		&::before {
+			content: "";
+			background-image: url(../img/sticky-icon.svg);
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 5px;
+			left: 0;
+			height: 30px;
+			width: 30px;
+		}
+	}
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* -------------------------------------------------
+>> Project Styles
+---------------------------------------------------
+>> Edit following styles or write your own
+------------------------------------------------- */
+
+
+.post-shares {
+	display: flex;
+
+	a {
+		margin-left: 8px;
+		padding: 5px;
+		border: 1px solid map-get($map: $colors, $key: pure_black);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+
+		&:hover {
+			border: 1px solid map-get($map: $colors, $key: l_gblack);
+		}
+	}
+}

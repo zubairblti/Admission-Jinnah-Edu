@@ -1,0 +1,344 @@
+.slide-thumb img,
+.burger-single,
+.post-tags,
+.post-content-des p,
+.post-meta,
+.search-button,
+.single-blog-post,
+.wpcf7-submit,
+a,
+a:visited,
+button,
+input[type="submit"],
+.home-hero,
+header {
+
+	@include transition(all, 0.3s, ease-in-out);
+
+	outline: 0;
+}
+
+.no-overflow {
+	overflow: hidden;
+}
+
+header {
+	padding: 15px 2.5%;
+
+	@include transition(all, 0.3s, ease-in-out);
+
+	z-index: 9;
+	box-sizing: border-box;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: map-get( $map: $variable_colors, $key: header-bgcolor );
+
+	&.shrink {
+		padding: 12px 2.5%;
+		position: fixed;
+		background-color: map-get( $map: $variable_colors, $key: header-fixed-bg-color );
+		box-shadow: 0px -4px 16px rgb( 18 27 32 / 0.15 );
+	}
+
+	.header-wrapper {
+		box-sizing: border-box;
+	}
+}
+
+.logo {
+	position: relative;
+	z-index: 9;
+	line-height: 0.65;
+	margin-top: 6px;
+
+	a {
+		display: block;
+		line-height: 0.65;
+	}
+}
+
+.left-header {
+	float: left;
+	width: 250px;
+}
+
+.no-overflow .left-header {
+	z-index: 9;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 70%;
+	padding-left: 20px;
+	padding-top: 19px;
+}
+
+.no-overflow header.shrink .left-header {
+	padding-top: 15px;
+}
+
+.header-btns {
+	margin-top: 0;
+	float: right;
+	width: 340px;
+	text-align: right;
+	position: relative;
+	z-index: 1;
+}
+
+body.logged-in.admin-bar {
+
+	header {
+		top: 32px;
+	}
+}
+
+
+// new version with BEM
+
+
+.header {
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&__logo {
+
+			a {
+				display: inline-block;
+			}
+		}
+
+		// header logo styling
+
+		&__navigation {
+			color: red;
+
+			&__menue {
+				display: flex;
+				margin: 0;
+
+				li {
+					margin: 0 20px;
+					padding: 0;
+					display: inline-block;
+					position: relative;
+					line-height: 1;
+
+					@include font(pg, med);
+
+					a,
+					a:visited {
+						padding: 0 0 10px;
+						display: inline-block;
+						line-height: 1;
+						border: 0;
+						position: relative;
+						color: map-get( $map: $variable_colors, $key: header-nav-color );
+
+						@include font-size(1.4);
+						@include font(pg, med);
+
+						text-transform: uppercase;
+
+						&::after {
+							content: "";
+							position: absolute;
+							width: 100%;
+							height: 1px;
+							bottom: 5px;
+							left: 0;
+							background-color: map-get( $map: $variable_colors, $key: header-nav-after-bgcolor );
+							opacity: 0.8;
+							transform: scaleX( 0 );
+							transform-origin: bottom right;
+							transition: transform 0.3s;
+						}
+					}
+
+					&.menu-item-has-children > a {
+						padding-right: 15px;
+						background-position: top 3px right;
+						background-repeat: no-repeat;
+						background-size: 9px;
+						background-image: url( ../img/submenu-icon.svg );
+					}
+
+					&.current-menu-item > a,
+					&.current-menu-parent > a,
+					a:hover {
+						border: 0;
+
+						&::after {
+							transform-origin: bottom left;
+							transform: scaleX( 1 );
+						}
+					}
+
+					&:hover > ul {
+						opacity: 1;
+						visibility: visible;
+						overflow: visible;
+					}
+				}
+
+				ul {
+					left: -44px;
+					width: 230px;
+					opacity: 0;
+					box-shadow: 0px 30px 60px rgb( 18 27 32 / 0.15 );
+					background-color: map-get( $map: $variable_colors, $key: header-nav-second-ul-bgcolor );
+					visibility: hidden;
+					padding: 26px 0;
+
+					@include border-radius(0);
+
+					position: absolute;
+					top: 27px;
+					z-index: 9;
+					overflow: hidden;
+					text-align: left;
+
+					@include transition(all, 0.4s, ease-in-out);
+
+					text-align: left;
+
+					li {
+						display: block;
+						margin: 0 0 14px;
+						padding: 0 26px;
+
+						&:last-child {
+							margin: 0;
+						}
+
+						a,
+						a:visited {
+
+							@include font-size(1.4);
+
+							display: inline-block;
+							padding-bottom: 2px;
+							line-height: 1;
+							box-sizing: border-box;
+							position: relative;
+							color: map-get( $map: $variable_colors, $key: header-nav-second-link-color );
+
+							@include transition(all, 0.3s, ease-in-out);
+							@include font(pg, med);
+
+							&::after {
+								bottom: 0;
+							}
+						}
+
+						a:hover {
+							color: map-get( $map: $variable_colors, $key: header-nav-second-link-color-hover );
+						}
+
+						&.current-menu-item > a,
+						&.current-menu-parent > a,
+						a:hover {
+							border: 0;
+
+							&::after {
+								transform-origin: bottom left;
+								transform: scaleX( 1 );
+							}
+						}
+					}
+
+					ul {
+						top: -26px;
+						left: 230px;
+
+						&::before {
+							display: none;
+							content: "";
+							width: 1px;
+							height: 1px;
+							position: absolute;
+							top: 12px;
+							left: -5px;
+							margin: auto;
+						}
+					}
+				}
+			}
+		}
+
+		// header navigation
+	}
+
+	&__buttons {
+		display: flex;
+
+		&__button {
+			// button styling if required
+			&--blue-btn {
+				background-color: blue !important;
+			}
+
+			// Modifier
+		}
+	}
+}
+
+@media (max-width: 1003px) {
+
+	.menu-btn {
+		display: block;
+		position: relative;
+		height: 25px;
+		width: 40px;
+		cursor: pointer;
+		z-index: 9999;
+
+		/* transition: all 0.3s ease-in-out; */
+	}
+
+
+	.menu-btn.active .top {
+		transform: translateY( 11px ) translateX( 0 ) rotate( -45deg );
+		transform: translateY( 11px ) translateX( 0 ) rotate( -45deg );
+		background-color: map-get( $map: $variable_colors, $key: mobile-nav-icon-bgcolor );
+
+		@include transition(all, 0.3s, ease-in-out);
+
+		top: 5px;
+	}
+
+	.menu-btn.active .bottom {
+		transform: translateY( -11px ) translateX( 0 ) rotate( 45deg );
+		transform: translateY( -11px ) translateX( 0 ) rotate( 45deg );
+		background-color: map-get( $map: $variable_colors, $key: mobile-nav-icon-bgcolor );
+
+		@include transition(all, 0.3s, ease-in-out);
+
+		top: 26px;
+	}
+
+	.menu-btn span {
+		background-color: map-get( $map: $variable_colors, $key: mobile-nav-icon-bgcolor );
+		border: none;
+		height: 2px;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: black;
+
+		@include transition(all, 0.3s, ease-in-out);
+	}
+
+	// .menu-btn.active span {
+	// 	left: 3px;
+	// }
+
+	.menu-btn span:nth-of-type(2) {
+		bottom: 0;
+		top: auto;
+	}
+}

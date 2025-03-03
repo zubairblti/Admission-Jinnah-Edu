@@ -1,0 +1,155 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+#commentform {
+
+	label {
+		display: block;
+	}
+
+	p.comment-form-author,
+	p.comment-form-url,
+	p.comment-form-email {
+		width: calc(33.3% - 10px);
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom: 0;
+	}
+
+	p.comment-form-comment {
+		margin-bottom: 0;
+	}
+
+	p.comment-form-comment textarea {
+		margin-bottom: 10px;
+	}
+
+	p.comment-form-url,
+	.url-comments,
+	li.middle {
+		margin-right: 0 !important;
+	}
+
+	.form-submit {
+		margin-bottom: 0;
+	}
+}
+
+.comment-meta,
+.comment-author {
+	margin-bottom: 15px;
+}
+
+.comments-closed {
+	margin: 30px 0;
+}
+
+.comment-meta {
+	margin-bottom: 30px;
+	color: map-get($map: $base_colors, $key: comment_meta_color);
+}
+
+.comment-author.vcard {
+	margin-bottom: 2px;
+
+	a {
+		border-bottom: none;
+	}
+
+	span {
+
+		@include font(axi, reg);
+	}
+}
+
+.comment-metadata {
+	font-size: 90%;
+
+	a {
+		color: map-get($map: $base_colors, $key: comment_metadata_color);
+		border-bottom: transparent;
+	}
+}
+
+.comment-content {
+
+	p {
+		margin-bottom: 20px;
+	}
+}
+
+.comment-body {
+	margin-bottom: 30px;
+}
+
+ol.commentlist {
+	margin-bottom: 60px;
+
+	li.comment {
+		margin-bottom: 30px;
+		padding: 30px 0 0;
+		border-top: 1px solid map-get($map: $base_colors, $key: comments_list_border_color);
+
+		&::before {
+			display: none !important;
+		}
+
+		&.pingback {
+			margin: 0 0 30px;
+		}
+
+		div {
+
+			&.vcard cite.fn {
+				font-style: normal;
+			}
+
+			&.vcard img.avatar {
+				float: left;
+				margin: 0 10px 0 0;
+				width: 64px;
+			}
+
+			&.commentmetadata {
+				padding: 8px 0 14px;
+			}
+		}
+
+		ul.children,
+		ol.children {
+			list-style: none;
+			margin: 50px 0 0;
+
+			li {
+				padding: 30px 0 0;
+
+				&.depth-2,
+				&.depth-3,
+				&.depth-4,
+				&.depth-5 {
+					margin: 0 0 30px 60px;
+				}
+			}
+		}
+	}
+}
+
+a.comment-reply-link {
+	background-color: map-get($map: $base_colors, $key: comments_reply_btn_bgcolor);
+	color: map-get($map: $base_colors, $key: comments_reply_btn_color);
+	padding: 6px 11px 5px;
+	font-size: 90%;
+	height: 37px;
+	box-sizing: border-box;
+	display: inline-block;
+	border: 2px solid transparent;
+
+	&:hover {
+		// border: 2px solid map-get($map: $base_colors, $key: comments_reply_btn_border_color_hover);
+		background-color: map-get($map: $base_colors, $key: comments_reply_btn_bgcolor_hover);
+		color: map-get($map: $base_colors, $key: comments_reply_btn_color_hover);
+	}
+}

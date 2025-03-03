@@ -1,0 +1,15 @@
+.wp-block-social-links {
+
+	li.wp-block-social-link {
+		list-style: none;
+		padding-left: 0;
+
+		&::before {
+			display: none;
+		}
+
+		svg {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,125 @@
+.faq-block {
+	max-width: 825px;
+	margin: 0 auto;
+}
+
+.faq {
+
+	>a {
+		border: none;
+		display: block;
+		font-size: 24px;
+		line-height: 30px;
+		color: map-get($colors, eg);
+
+		@include font(axi, reg);
+
+		cursor: pointer;
+		position: relative;
+		padding: 37px 0 36px;
+		border-top: 1px solid rgb(40 28 60 / 0.12);
+
+		&::after {
+			position: absolute;
+			content: "";
+			width: 30px;
+			height: 30px;
+			right: 0;
+			top: 37px;
+
+			@include transition(all, 0.4s, ease-in-out);
+
+			display: block;
+			background-image: url(../img/faq-plus-icon.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		&:hover {
+			color: map-get($map: $colors, $key: black);
+			border-top: 1px solid rgb(40 28 60 / 0.12);
+
+			&::after {
+				background-image: url(../img/plus-hover.svg);
+			}
+		}
+
+		&.active {
+			padding-bottom: 24px;
+			color: map-get($map: $colors, $key: black);
+
+			&::after {
+				background-image: url(../img/faq-minus-icon.svg);
+			}
+		}
+	}
+}
+
+.faq-content {
+	display: none;
+	border-top: 0;
+	color: map-get($map: $colors, $key: black);
+	font-size: 20px;
+	line-height: 32px;
+	padding-bottom: 48px;
+	max-width: 716px;
+
+	p {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.top-latters-area {
+
+	a,
+	a:visited {
+		display: inline-block;
+		width: 44px;
+		height: 44px;
+		box-sizing: border-box;
+		border-radius: 50%;
+		border: 1px solid rgb(40 28 60 / 0.2);
+		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 22px;
+
+		@include font(axi, reg);
+
+		padding: 10px;
+		color: map-get($map: $colors, $key: black);
+		margin: 0 4px 12px 0;
+		text-align: center;
+
+		&:hover {
+			border: 1px solid rgb(40 28 60 / 0.6);
+		}
+	}
+}
+
+.letter-box {
+	float: left;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 7px;
+	box-sizing: border-box;
+	background-color: rgb(40 28 60 / 0.04);
+	font-size: 15px;
+	line-height: 20px;
+
+	@include font(axi, reg);
+}
+
+.glossary-content {
+	padding: 24px 0;
+	border-bottom: 1px solid rgb(40 28 60 / 0.12);
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}

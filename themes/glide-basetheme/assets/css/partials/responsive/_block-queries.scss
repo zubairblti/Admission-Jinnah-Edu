@@ -1,0 +1,163 @@
+@media only screen and (min-width: 1180px) and (max-width: 1345px) {
+	// code will be starts from here
+}
+
+@media only screen and (min-width: 1004px) and (max-width: 1179px) {
+	// code will be starts from here
+}
+
+@media only screen and (max-width: 1003px) {
+	// code will be starts from here
+}
+
+@media only screen and (min-width: 748px) and (max-width: 1003px) {
+	// code will be starts from here
+}
+
+@media only screen and (max-width: 747px) {
+
+	/**
+	 * Spacers
+	 */
+	.s-270 {
+		height: 120px;
+	}
+
+	.s-200 {
+		height: 100px;
+	}
+
+	.s-160,
+	.ts-160 {
+		height: 86px;
+	}
+
+	.s-140,
+	.ts-140 {
+		height: 74px;
+	}
+
+	.s-120,
+	.ts-120 {
+		height: 64px;
+	}
+
+	.s-100,
+	.ts-100 {
+		height: 56px;
+	}
+
+	.s-80,
+	.ts-80 {
+		height: 46px;
+	}
+
+	.s-60,
+	.ts-60 {
+		height: 40px;
+	}
+
+	.s-50,
+	.ts-50 {
+		height: 36px;
+	}
+
+	.s-40,
+	.ts-40 {
+		height: 30px;
+	}
+
+	// headings
+	h1,
+	.heading-1 {
+		font-size: 40px;
+	}
+
+	h2,
+	.heading-2 {
+		font-size: 30px;
+	}
+
+	h3,
+	.heading-3 {
+		font-size: 26px;
+	}
+
+	h4,
+	.heading-4 {
+		font-size: 23px;
+	}
+
+	h5,
+	.heading-5 {
+		font-size: 21px;
+	}
+
+	h6,
+	.heading-6 {
+		font-size: 19px;
+	}
+
+	p {
+		font-size: 16px;
+	}
+
+	// columns
+	.two-columns,
+	.three-columns,
+	.four-columns,
+	.five-columns {
+
+		.column {
+			width: 100%;
+		}
+	}
+
+	// at block
+	.iat-image.column {
+		margin-top: 30px;
+	}
+
+	// lists
+	ul.children,
+	ol.children {
+
+		li {
+
+			&.depth-2,
+			&.depth-3,
+			&.depth-4,
+			&.depth-5 {
+				margin: 0 0 30px 20px !important;
+			}
+		}
+	}
+
+	// forms styling
+	.gfield.half-input-field,
+	.ginput_left,
+	.name_first,
+	.ginput_right,
+	.name_last {
+		width: 100%;
+		margin-right: 0;
+		display: block;
+	}
+	// Wp Table Block
+	figure {
+		overflow-x: scroll;
+
+		td,
+		th {
+			width: 140px;
+		}
+	}
+}
+
+@media only screen and (min-width: 460px) and (max-width: 747px) {
+	// code will be starts from here
+}
+
+@media only screen and (max-width: 459px) {
+	// code will be starts from here
+}

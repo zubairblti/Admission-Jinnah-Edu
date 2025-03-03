@@ -1,0 +1,202 @@
+$base-url: "../";
+$used-fonts: ();
+$base-font-stack: (axi: (reg: (family: ("Axiforma-Regular",
+arial,
+sans-serif,
+),
+weight: 400,
+style: normal,
+font-face: (family: "axiforma-regular",
+path: "axiforma-regular",
+formats: (woff2,
+),
+),
+),
+med: (family: ("Axiforma-Medium",
+arial,
+sans-serif,
+),
+weight: 500,
+style: normal,
+font-face: (family: "axiforma-medium",
+path: "axiforma-medium",
+formats: (woff2,
+),
+),
+),
+sbold: (family: ("Axiforma-SemiBold",
+arial,
+sans-serif,
+),
+weight: 700,
+style: normal,
+font-face: (family: "axiforma-semibold",
+path: "axiforma-semibold",
+formats: (woff2,
+),
+),
+),
+bold: (family: ("Axiforma-Bold",
+arial,
+sans-serif,
+),
+weight: 700,
+style: normal,
+font-face: (family: "axiforma-bold",
+path: "axiforma-bold",
+formats: (woff2,
+),
+),
+),
+),
+);
+
+// Fetch nested keys
+@function map-deep-get($map, $keys...) {
+
+	@each $key in $keys {
+
+		@if type-of($map) != "map" {
+
+			@warn "`#{$map}` is not a map.";
+			@return false;
+		}
+
+		$map: map-get($map, $key);
+	}
+
+	@return $map;
+}
+
+// Checks if a list contains a value(s).
+@function contains($list, $values...) {
+
+	@each $value in $values {
+
+		@if type-of(index($list, $value)) != "number" {
+
+			@return false;
+		}
+	}
+
+	@return true;
+}
+
+// Returns URL to a font based on its path
+@function font($path, $base: $base-url) {
+
+	@return url($base + "fonts/" + $path);
+}
+
+// Font styling shorthand
+@mixin font($group, $variant: reguopen, $properties: family weight style, $font-stack: $base-font-stack) {
+	$font-properties: map-deep-get($font-stack, $group, $variant);
+
+	@if $font-properties {
+
+		@include track-fonts($group, $variant);
+
+		@each $key,
+			$value in $font-properties {
+
+			@if contains($properties, $key) {
+				font-#{$key}: $value;
+			}
+		}
+	}
+}
+
+// Track all fonts and variations used in the stylesheet
+// Check if this combination already exists in the map.
+// If not, we add it to the map.
+@mixin track-fonts($group, $variant) {
+
+	// First check if we already knew this one:
+	@if map-has-key($used-fonts, $group) == false {
+		// Font-family isn't in the map yet, so add it.
+		// The key for the nested map is the font name:
+		$used-fonts: map-merge($used-fonts, ($group: (),
+	)) !global;
+	}
+
+	// Now check if the variation is known
+	$font-map: map-get($used-fonts, $group);
+
+	@if index($font-map, $variant) == null {
+		// Variation isn't in the map yet, so add it:
+		$variations: append($font-map, $variant);
+		$used-fonts: map-merge($used-fonts, ($group: $variations,
+	)) !global;
+	}
+}
+
+// Add the font-face rules for all used fonts
+@mixin import-fonts($font-stack: $base-font-stack) {
+
+	@each $group,
+		$variations in $used-fonts {
+
+		@each $variant in $variations {
+			$font-properties: map-deep-get($font-stack, $group, $variant);
+
+			@if $font-properties {
+				// If we have a font-face key we create the font-face rule
+				$font-face: map-get($font-properties, font-face);
+
+				@if $font-face {
+					$font-family: map-get($font-face, family);
+					$file-path: map-get($font-face, path);
+					$file-formats: map-get($font-face, formats);
+					$font-weight: map-get($font-properties, weight);
+					$font-style: map-get($font-properties, style);
+
+					@if $file-formats {
+
+						@include font-face($font-family, $file-path, $font-weight, $font-style, $file-formats);
+					} @else {
+
+						@include font-face($font-family, $file-path, $font-weight, $font-style);
+					}
+				}
+			}
+		}
+	}
+}
+
+// Used for creating the source string for fonts using @font-face
+@function font-source($font-family, $file-path, $file-formats) {
+	$src: ();
+	$formats-map: (
+		woff2: "#{$file-path}.woff2"format("woff2"),
+
+
+
+	);
+
+	@each $key,
+		$values in $formats-map {
+
+		@if contains($file-formats, $key) {
+			$file-path: nth($values, 1);
+			$font-format: nth($values, 2);
+			$src: append($src, font($file-path) $font-format, comma);
+		}
+	}
+
+	@return $src;
+}
+
+// Add a font-face rule
+@mixin font-face($font-family,
+$file-path,
+$font-weight: 400,
+$font-style: normal,
+$file-formats: eot woff2 woff ttf svg) {
+
+	@font-face {
+		font-family: $font-family;
+		font-style: $font-style;
+		font-weight: $font-weight;
+		src: font-source($font-family, $file-path, $file-formats);
+	}
+}

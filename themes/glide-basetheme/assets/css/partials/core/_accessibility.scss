@@ -1,0 +1,44 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: map-get($map: $base_colors, $key: acc_btn_color);
+		background-color: map-get($map: $base_colors, $key: acc_btn_bgcolor);
+		box-shadow: 0 0 2px 2px map-get($map: $base_colors, $key: acc_btn_shadow);
+		clip: auto !important;
+		clip-path: none;
+		border-radius: 0;
+		display: block;
+		font-size: 14px;
+		font-weight: 700;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 25px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000;
+	}
+}
+
+#page-section[tabindex="-1"]:focus {
+	outline: 0;
+}

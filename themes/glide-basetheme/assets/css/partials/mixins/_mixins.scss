@@ -1,0 +1,57 @@
+@use "sass:math";
+
+/*
+Rem output with px fallback
+*/
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 10) * 1px;
+	font-size: $sizeValue * 10px;
+}
+
+/*
+Rem output with px fallback with !important
+*/
+@mixin font-size-imp($sizeValue: 1) {
+	font-size: ($sizeValue * 10) * 1px !important;
+	font-size: $sizeValue * 10px !important;
+}
+
+/*
+Column width with margin
+*/
+@mixin column($numberColumns, $gap) {
+	width: math.div(100%, $numberColumns) - math.div(($gap * ($numberColumns - 1)), $numberColumns);
+	margin-right: $gap;
+
+
+	@if $numberColumns == 2 {
+
+		&:nth-child(even) {
+			margin-right: 0;
+		}
+	} @else {
+		&:nth-child(#{$numberColumns}n + #{$numberColumns}) {
+			margin-right: 0;
+		}
+	}
+}
+
+/*
+Mixin for transition
+*/
+@mixin transition($property, $duration, $animation) {
+	transition: $property $duration $animation;
+}
+
+@mixin background-image($image, $background_position, $background_size, $background_repeat, $background_height, $background_width) {
+
+	@if $image != "" {
+		background-image: url("../img/#{$image}");
+	}
+
+	background-repeat: $background_repeat;
+	background-position: $background_position;
+	background-size: $background_size;
+	height: $background_height;
+	width: $background_width;
+}

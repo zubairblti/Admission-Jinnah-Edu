@@ -1,0 +1,16 @@
+.wp-block-latest-comments .avatar,
+.wp-block-latest-comments__comment-avatar {
+	border-radius: unset;
+	margin-top: 3px;
+}
+
+.wp-block-latest-comments__comment-date {
+	margin: 5px 0;
+	color: map-get($map: $base_colors, $key: widget_comments_meta_color);
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: 100%;
+	line-height: 1.5;
+	margin: 5px 0;
+}

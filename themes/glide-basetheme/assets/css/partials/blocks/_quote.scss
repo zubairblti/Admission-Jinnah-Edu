@@ -1,0 +1,10 @@
+blockquote {
+
+	&.wp-block-quote {
+
+		&.is-style-large {
+			border-left: 0;
+			padding: 0;
+		}
+	}
+}

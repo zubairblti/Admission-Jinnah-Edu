@@ -1,0 +1,168 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Do not edit these styles
+------------------------------------------------- */
+
+header,
+footer {
+
+	ul,
+	ol {
+		list-style: none;
+	}
+}
+
+/* -------------------------------------------------
+>> Project Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+// Description List
+dl {
+	margin: 0 0 30px;
+
+	dt {
+		font-weight: 700;
+	}
+
+	dd {
+		margin: 0 0 12px;
+	}
+}
+
+// Ordered / Unordered List
+ul,
+ol {
+	margin: 0 0 30px 20px;
+}
+
+ul li,
+ol li {
+
+	margin: 0 0 12px;
+	box-sizing: border-box;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin: 12px 0 0 30px;
+}
+
+.page-section {
+
+	ul {
+		list-style: none;
+		margin-left: 0;
+
+		ul,
+		ol {
+			margin-left: 13px;
+		}
+
+		li {
+			padding-left: 16px;
+			position: relative;
+
+			&::before {
+				content: "";
+				width: 6px;
+				height: 6px;
+				background-position: left top;
+				position: absolute;
+				background-color: map-get($map: $base_colors, $key: list_marker_bgcolor);
+				left: 0;
+				top: 9px;
+				border-radius: 50%;
+			}
+		}
+
+		ol {
+			counter-reset: list1;
+
+			li {
+
+				&::before {
+					counter-increment: list1;
+					content: counters(list1, ".") ".";
+				}
+			}
+		}
+	}
+
+	ol {
+		counter-reset: list;
+		list-style-type: none;
+		margin-left: 0;
+
+		ol,
+		ul {
+			margin-left: 13px;
+		}
+
+		li {
+			position: relative;
+			padding-left: 24px;
+
+			&::marker {
+				display: none;
+			}
+
+			&::before {
+				color: map-get($map: $base_colors, $key: ol_list_marker_color);
+
+				@include font(axi, reg);
+
+				content: counters(list, ".") ".";
+				counter-increment: list;
+				left: 0;
+				top: 0;
+				position: absolute;
+				background-color: transparent;
+			}
+		}
+
+		ol {
+
+			li {
+				padding-left: 34px;
+			}
+
+			ol {
+
+				li {
+					padding-left: 64px;
+				}
+
+				ol {
+
+					li {
+						padding-left: 80px;
+					}
+				}
+			}
+		}
+
+		ul {
+			counter-reset: unset;
+
+			li {
+				padding-left: 20px;
+
+				&::before {
+					content: "";
+					width: 6px;
+					height: 6px;
+					background-position: left top;
+					position: absolute;
+					background-color: map-get($map: $base_colors, $key: list_marker_bgcolor);
+					left: 0;
+					top: 9px;
+				}
+			}
+		}
+	}
+}

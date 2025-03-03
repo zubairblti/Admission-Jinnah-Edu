@@ -1,0 +1,25 @@
+.wpcf7-list-item {
+	margin: 0 10px 0 0 !important;
+}
+
+.wpcf7-section {
+
+	label {
+		display: block;
+	}
+}
+
+.wpcf7-form-control-wrap {
+	display: block;
+	margin-top: 10px;
+}
+
+.wpcf7-not-valid-tip {
+	color: map-get($map: $base_colors, $key: valiation_error_color) !important;
+	position: relative;
+	top: -15px;
+}
+
+.wpcf7-response-output {
+	margin: 0 !important;
+}

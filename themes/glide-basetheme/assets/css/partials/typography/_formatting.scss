@@ -1,0 +1,131 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+i,
+em,
+var,
+address,
+dfn {
+	font-style: italic;
+}
+
+code,
+pre,
+kbd,
+tt,
+var,
+samp {
+	font-family: monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted map-get($map: $base_colors, $key: abbr_border_color);
+	text-decoration: none;
+	cursor: help;
+}
+
+abbr[title] {
+	text-decoration: none;
+}
+
+address {
+	margin: 0 0 30px;
+}
+
+mark {
+	background-color: map-get($map: $base_colors, $key: mark_bgcolor);
+	color: map-get($map: $base_colors, $key: mark_color);
+	padding: 3px 7px;
+}
+
+small {
+	font-size: 80%;
+}
+
+big {
+	font-size: 125%;
+}
+
+s,
+strike,
+del {
+	text-decoration: line-through;
+}
+
+b,
+strong {
+	font-weight: 700;
+	color: map-get($map: $base_colors, $key: strong_color);
+}
+
+u {
+	border-bottom: 1px solid map-get($map: $base_colors, $key: underline_border_color);
+	text-decoration: none;
+}
+
+del {
+	color: map-get($map: $base_colors, $key: delete_color);
+}
+
+ins {
+	color: map-get($map: $base_colors, $key: insert_color);
+	border-bottom: 1px solid map-get($map: $base_colors, $key: insert_border_color);
+	text-decoration: none;
+}
+
+sub,
+sup {
+	font-size: 70%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -4px;
+}
+
+sup {
+	top: -8px;
+}
+
+code,
+pre,
+kbd,
+tt {
+	max-width: 100%;
+	overflow: auto;
+	margin: 0 0 30px;
+}
+
+code,
+kbd,
+tt {
+	color: map-get($map: $base_colors, $key: code_color);
+	background-color: map-get($map: $base_colors, $key: code_bgcolor);
+	padding: 3px 7px;
+}
+
+pre {
+	color: map-get($map: $base_colors, $key: pre_color);
+	background-color: map-get($map: $base_colors, $key: pre_bgcolor);
+	padding: 20px 25px;
+	overflow-x: scroll;
+}
+
+hr {
+	background-color: map-get($map: $base_colors, $key: hr_bgcolor);
+	border: 0;
+	height: 1px;
+	margin-bottom: 30px;
+}
+
+audio,
+video {
+	margin-bottom: 30px;
+	width: 100%;
+}

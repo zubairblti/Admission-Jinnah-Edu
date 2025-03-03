@@ -1,0 +1,12 @@
+
+.clear {
+	content: "";
+	display: table;
+	table-layout: fixed;
+	clear: both;
+
+	&::before,
+	&::after {
+		clear: both;
+	}
+}

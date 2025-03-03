@@ -1,0 +1,58 @@
+/****
+ *
+ * containers
+ *
+****/
+
+.wrapper {
+	max-width: 1300px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.container-980 {
+
+	.wrapper {
+		max-width: 980px;
+	}
+}
+
+.green-container {
+	background-color: map-get( $map: $colors, $key: green );
+	padding: 160px 0;
+}
+
+.navy-container {
+	background-color: map-get( $map: $colors, $key: navy );
+}
+
+.full-width-navi-container {
+	background-color: map-get( $map: $colors, $key: navy );
+
+	.wrapper {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+.full-width-container {
+
+	.wrapper {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+.container-1000 {
+
+	.wrapper {
+		max-width: 1000px;
+	}
+}
+
+.container-760 {
+
+	.wrapper {
+		max-width: 760px;
+	}
+}

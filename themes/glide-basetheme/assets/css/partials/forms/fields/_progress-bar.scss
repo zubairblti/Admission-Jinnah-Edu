@@ -1,0 +1,33 @@
+/* -------------------------------------------------
+>> Project Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+progress {
+	vertical-align: baseline;
+	appearance: none;
+	appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 6px;
+	border: none;
+	background-color: map-get( $map: $base_colors, $key: progress_bgcolor );
+	border-radius: 0;
+	margin: 0 0 20px;
+}
+
+progress::-webkit-progress-bar {
+	background-color: map-get( $map: $base_colors, $key: progress_bgcolor );
+	border-radius: 0;
+}
+
+progress::-webkit-progress-value {
+	background-color: map-get( $map: $base_colors, $key: progress_value_bgcolor );
+	border-radius: 0;
+}
+
+progress::-moz-progress-bar {
+	background-color: map-get( $map: $base_colors, $key: progress_value_bgcolor );
+	border-radius: 0;
+}

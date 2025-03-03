@@ -1,0 +1,63 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+
+/* Mixins */
+@import "partials/mixins/mixins";
+
+/* Fonts */
+@import "partials/fonts/fonts";
+
+/* Variables */
+@import "partials/variables/variables";
+
+.editor-styles-wrapper {
+	font-family: Axiforma-Regular, Arial, sans-serif !important;
+	font-size: 16px;
+	color: map-get($map: $base_colors, $key: body_color);
+	line-height: 1.5;
+
+	/* Editor style */
+
+	@import "editor-static";
+
+	/* Typography */
+
+	@import "partials/typography/typography";
+
+	/* Elements */
+
+	@import "partials/elements/lists";
+	@import "partials/elements/quotes";
+	@import "partials/elements/tables";
+
+	/* Media */
+
+	@import "partials/media/media";
+
+	/* Core */
+
+	@import "partials/core/core";
+
+	/* Blocks */
+
+	@import "partials/blocks/blocks";
+
+	/*  Vendor CSS Magnific popup */
+
+	@import "vendor/magnific-popup.css";
+}
+
+/*  Vendor CSS Owl carousel */
+@import "vendor/owl.carousel.css";
+@import "vendor/owl.theme.default.css";
+
+.acf-block-preview {
+
+	/* site */
+	@import "partials/site/site";
+
+	/* Forms */
+	@import "partials/forms/forms";
+
+	/* Responsive */
+	@import "partials/responsive/block-queries";
+}

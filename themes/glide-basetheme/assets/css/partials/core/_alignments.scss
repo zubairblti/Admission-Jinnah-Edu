@@ -1,0 +1,51 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+.alignnone {
+	margin: 15px 0 30px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 15px auto 30px;
+	clear: both;
+	text-align: center;
+}
+
+.alignright {
+	float: right;
+	margin: 15px 0 30px 20px;
+}
+
+
+.alignleft {
+	float: left;
+	margin: 15px 20px 30px 0;
+}
+
+a img {
+
+	&.alignright {
+		float: right;
+		margin: 15px 0 30px 20px;
+	}
+
+	&.alignnone {
+		margin: 15px 0 30px;
+	}
+
+	&.alignleft {
+		float: left;
+		margin: 15px 20px 30px 0;
+	}
+
+	&.aligncenter {
+		display: block;
+		margin: 15px auto 30px;
+		text-align: center;
+		clear: both;
+	}
+}

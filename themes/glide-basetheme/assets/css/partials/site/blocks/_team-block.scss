@@ -1,0 +1,216 @@
+.team-members {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+.single-member {
+	position: relative;
+	margin-bottom: 40px;
+
+	.t-detail {
+		margin-top: 20px;
+	}
+
+	.sm-inner {
+		display: inline-block;
+		box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+		border-bottom: none;
+		position: relative;
+	}
+
+	.member-image {
+
+		@include background-image("default-image.webp", center ,cover, no-repeat, 310px, 100%);
+	}
+
+	.member-name {
+
+		@include font(axi, bold);
+		margin-bottom: 8px;
+	}
+
+	.designation {
+
+		@include font(axi, reg);
+
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+}
+
+.black-container {
+
+	* {
+		color: map-get($map: $colors, $key: white);
+	}
+}
+
+.section-team-variation {
+	max-width: 1064px;
+	margin: 0 auto;
+}
+
+.single-member-detail {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	column-gap: 2%;
+	justify-content: space-between;
+	padding: 16px 0 21px;
+	color: map-get($map: $colors, $key: black80);
+	border-bottom: 1px solid map-get($map: $colors, $key: regular_text);
+
+	&:first-child {
+		border-top: 1px solid map-get($map: $colors, $key: regular_text);
+	}
+
+	h6 {
+		letter-spacing: -0.15px;
+		color: map-get($map: $colors, $key: black80);
+	}
+
+	h6,
+	p {
+		margin-bottom: 0;
+	}
+
+	.name {
+		flex: 4;
+	}
+
+	.description {
+		flex: 5;
+	}
+
+	.title {
+		flex: 2;
+	}
+}
+
+.team-detail {
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	max-width: 639px;
+	max-height: 70vh;
+	width: 100%;
+	transition: all 0.5s ease-in-out;
+	display: inline-block;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+
+	.team-detail-inner {
+		padding-right: 6px;
+		height: 100%;
+		overflow: auto;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		&.scroll {
+			padding-right: 0;
+
+			&::-webkit-scrollbar {
+				display: block;
+			}
+		}
+	}
+
+	.mfp-close {
+		position: absolute;
+		top: 7px;
+		right: 5px;
+		width: 16px;
+		height: 16px;
+		transition: all 200ms;
+		background-image: url(../img/close.png);
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&:hover {
+			background-color: transparent;
+			cursor: pointer;
+		}
+	}
+}
+
+.team-detail-inner::-webkit-scrollbar {
+	width: 6px;
+	height: 100%;
+}
+
+.team-detail-inner::-webkit-scrollbar-track {
+	background-color: map-get($map: $colors, $key: regular_text);
+}
+
+.team-detail-inner::-webkit-scrollbar-thumb {
+	background: map-get($map: $colors, $key: yellow);
+}
+
+.single-team {
+	text-align: left;
+
+	.single-team-head {
+		background-color: map-get($map: $colors, $key: mgray);
+		position: relative;
+		padding-right: 35px;
+	}
+
+	.member-image-popup {
+		width: 30%;
+		height: 185px;
+	}
+
+	.member-detail-popup {
+		width: 64%;
+	}
+
+	.member-name-popup {
+
+		@include font(axi, bold);
+
+		color: map-get($map: $colors, $key: dark_text);
+		margin-bottom: 5px;
+	}
+
+	.member-designation {
+
+		@include font(pn, reg);
+
+		color: map-get($map: $colors, $key: l_gblack);
+		margin-bottom: 0;
+		font-size: 20px;
+		letter-spacing: -0.6px;
+	}
+
+	.single-team-content * {
+		color: black !important;
+	}
+
+	.single-team-content {
+		overflow: auto;
+		background-color: map-get($map: $colors, $key: white-text);
+		padding: 41px 60px 50px 50px;
+		font-size: 18px;
+		line-height: 1.65;
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+.mfp-content {
+	text-align: center;
+}
+
+.mfp-wrap {
+	z-index: 999999 !important;
+}

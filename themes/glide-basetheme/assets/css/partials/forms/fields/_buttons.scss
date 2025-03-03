@@ -1,0 +1,51 @@
+/* -------------------------------------------------
+>> Project Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+input[type="image"] {
+	margin: 0 10px 0 0;
+}
+
+input[type="submit"],
+button,
+input[type="button"],
+input[type="reset"] {
+	padding: 0 30px;
+	display: inline-block;
+	line-height: 1;
+	box-sizing: border-box;
+
+	@include transition(all, 0.4s, ease-in-out);
+
+	background-color: map-get( $map: $base_colors, $key: button_bgcolor );
+	color: map-get( $map: $base_colors, $key: button_color );
+	outline: none;
+	border: none;
+
+	@include font(axi, reg);
+
+	font-size: 16px;
+	height: 50px;
+	outline: none;
+	cursor: pointer;
+	margin: 0 10px 10px 0;
+}
+
+input[type="submit"]:hover,
+button:hover,
+input[type="button"]:hover {
+	color: map-get( $map: $base_colors, $key: button_color_hover );
+	background-color: map-get( $map: $base_colors, $key: button_bgcolor_hover );
+}
+
+input[type="reset"] {
+	background-color: map-get( $map: $base_colors, $key: theme_btn_bgcolor );
+	color: map-get( $map: $base_colors, $key: theme_btn_color );
+
+	&:hover {
+		color: map-get( $map: $base_colors, $key: theme_btn_color );
+		background-color: map-get( $map: $base_colors, $key: theme_btn_bgcolor_hover );
+	}
+}

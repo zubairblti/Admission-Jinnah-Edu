@@ -1,0 +1,46 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Do not edit these styles
+------------------------------------------------- */
+
+a {
+	text-decoration: none;
+
+	@include transition(all, 0.4s, ease-in-out);
+
+	outline: none;
+	position: relative;
+}
+
+/* -------------------------------------------------
+>> Project Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+.page-section {
+
+	a,
+	&:visited {
+		color: map-get($map: $base_colors, $key: link_color);
+		border-bottom: 1px solid map-get($map: $base_colors, $key: link_border_color);
+		padding-bottom: 2px;
+
+		&:hover,
+		&:active {
+			color: map-get($map: $base_colors, $key: link_color_hover);
+			border-color: map-get($map: $base_colors, $key: link_border_color_hover);
+		}
+	}
+}
+
+
+.post-image,
+.post-title {
+
+	a,
+	&:visited {
+		border-bottom: none;
+	}
+}

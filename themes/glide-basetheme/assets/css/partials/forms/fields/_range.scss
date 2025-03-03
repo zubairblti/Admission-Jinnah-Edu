@@ -1,0 +1,60 @@
+/* -------------------------------------------------
+>> Project Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+input[type="range"] {
+	padding: 0;
+	border: none;
+	appearance: none;
+	width: 100%;
+	border-radius: 0;
+	height: 22px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 6px;
+	cursor: pointer;
+	background-color: map-get( $map: $base_colors, $key: range_track_bgcolor );
+	border: none;
+	animate: 0.2s;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+input[type="range"]::-moz-range-track {
+	width: 100%;
+	height: 6px;
+	cursor: pointer;
+	background-color: map-get( $map: $base_colors, $key: range_track_bgcolor );
+	border: none;
+	animate: 0.2s;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	height: 14px;
+	width: 14px;
+	background-color: map-get( $map: $base_colors, $key: range_thumb_bgcolor );
+	cursor: pointer;
+	appearance: none;
+	margin-top: -4px;
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+}
+
+input[type="range"]::-moz-range-thumb {
+	height: 14px;
+	width: 14px;
+	background-color: map-get( $map: $base_colors, $key: range_thumb_bgcolor );
+	cursor: pointer;
+	appearance: none;
+	margin-top: -4px;
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+}

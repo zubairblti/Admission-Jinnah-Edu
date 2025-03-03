@@ -1,0 +1,12 @@
+// image positions
+
+.image-at-left {
+	flex-direction: row-reverse;
+
+	.column {
+
+		&:first-child {
+			margin: 0 0 0 2%;
+		}
+	}
+}

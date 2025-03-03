@@ -1,0 +1,26 @@
+.wp-block-calendar {
+
+	a {
+		text-decoration: none;
+	}
+
+	table {
+		margin: 0 0 20px;
+
+		caption,
+		tbody {
+			color: none;
+		}
+
+		tbody td,
+		th {
+			padding: 10px 15px;
+			border: none;
+		}
+
+		th {
+			background-color: transparent;
+			font-weight: 700;
+		}
+	}
+}

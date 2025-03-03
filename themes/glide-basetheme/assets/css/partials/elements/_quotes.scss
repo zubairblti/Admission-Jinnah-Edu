@@ -1,0 +1,102 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote {
+	position: relative;
+	color: map-get($map: $base_colors, $key: blockquote_color);
+	border-left: 3px solid map-get($map: $base_colors, $key: blockquote_border_color);
+	padding: 5px 0 5px 20px;
+	margin: 0 0 30px;
+
+	p {
+		margin-bottom: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-quote {
+
+	&.has-text-align-right {
+		border-left: none;
+		border-right: 3px solid map-get($map: $base_colors, $key: blockquote_border_color);
+		padding: 5px 20px 5px 0;
+
+		&.is-style-plain {
+			border-right: none;
+		}
+	}
+
+	&.has-text-align-left.is-style-plain {
+		border-left: none;
+		padding: 0;
+	}
+
+	&.has-text-align-center {
+		border-left: none;
+		padding: 20px 5px;
+	}
+
+	&.is-style-plain {
+		border-left: none;
+	}
+
+	&.is-style-large {
+		border-left: 0;
+	}
+}
+
+figure {
+
+	&.wp-block-pullquote {
+		border-top: 3px solid map-get($map: $base_colors, $key: blockquote_border_color);
+		border-bottom: 3px solid map-get($map: $base_colors, $key: blockquote_border_color);
+		padding-left: 10px;
+		padding-right: 10px;
+
+		blockquote {
+			border-left: none;
+			margin-bottom: 0;
+			padding: 10px;
+		}
+
+		&.alignleft,
+		&.alignright {
+			padding: 35px 10px;
+		}
+	}
+}
+
+q {
+	quotes: "\201C""\201D";
+	color: map-get($map: $base_colors, $key: quote_color);
+	position: relative;
+}
+
+cite {
+	display: block;
+	margin-top: 15px;
+	font-size: 80%;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: map-get($map: $base_colors, $key: blockqoute_cite_color);
+	font-family: "IBM Plex Mono", monospace;
+	font-style: italic;
+	position: relative;
+
+	&::before {
+		content: "- ";
+		display: inline-block;
+		top: -11px;
+	}
+}

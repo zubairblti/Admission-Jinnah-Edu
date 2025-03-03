@@ -1,0 +1,38 @@
+.two-columns,
+.three-columns,
+.four-columns {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.two-columns {
+
+	.column {
+
+		@include column(2, 2%);
+	}
+}
+
+.three-columns {
+
+	.column {
+
+		@include column(3, 2%);
+	}
+}
+
+.four-columns {
+
+	.column {
+
+		@include column(4, 3%);
+	}
+}
+
+.five-columns {
+
+	.column {
+
+		@include column(5, 3%);
+	}
+}

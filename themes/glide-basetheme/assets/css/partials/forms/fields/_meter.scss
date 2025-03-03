@@ -1,0 +1,50 @@
+meter {
+	appearance: none;
+	appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 6px;
+	background-color: map-get( $map: $base_colors, $key: meter_bgcolor );
+	border-radius: 0;
+	margin: 0 0 20px;
+	box-shadow: none;
+}
+
+/* WebKit */
+meter::-webkit-meter-bar {
+	background: none;
+	background-color: map-get( $map: $base_colors, $key: meter_value_bgcolor );
+	border-radius: 0;
+	box-shadow: none;
+}
+
+meter::-webkit-meter-optimum-value {
+	background: map-get( $map: $base_colors, $key: meter_value_bgcolor );
+}
+
+meter::-webkit-meter-suboptimum-value {
+	background: map-get( $map: $base_colors, $key: meter_value_bgcolor );
+}
+
+meter::-webkit-meter-even-less-good-value {
+	background: map-get( $map: $base_colors, $key: meter_value_bgcolor );
+}
+
+/* Firefox */
+meter::-moz-meter-bar {
+	background: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+meter:-moz-meter-optimum::-moz-meter-bar {
+	background: map-get( $map: $base_colors, $key: meter_value_bgcolor );
+}
+
+meter:-moz-meter-sub-optimum::-moz-meter-bar {
+	background: map-get( $map: $base_colors, $key: meter_value_bgcolor );
+}
+
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+	background: map-get( $map: $base_colors, $key: meter_value_bgcolor );
+}

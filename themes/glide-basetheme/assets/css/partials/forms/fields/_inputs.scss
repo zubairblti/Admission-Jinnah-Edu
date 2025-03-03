@@ -1,0 +1,175 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+form {
+	margin: 0 0 20px;
+}
+
+label {
+	margin: 0 0 6px;
+	display: inline-block;
+	line-height: 1.2;
+}
+
+fieldset {
+	margin: 10px 0 30px;
+	display: block;
+}
+
+legend {
+	display: block;
+	margin: 0 0 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="password"],
+input[type="time"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="month"],
+input[type="file"],
+input[type="range"],
+input[list],
+input[type="string"],
+select,
+textarea,
+.gform-text-input-reset {
+
+	@include font(axi, reg);
+
+	font-size: 18px;
+	height: 50px;
+	width: 100%;
+	border: 1px solid map-get( $map: $base_colors, $key: input_border_color );
+	background-color: map-get( $map: $base_colors, $key: input_bgcolor );
+	color: map-get( $map: $base_colors, $key: input_color );
+	outline: none;
+	padding: 0 0 0 12px;
+	margin: 0 0 20px;
+	max-width: 100%;
+	box-sizing: border-box;
+
+	@include transition(all, 0.4s, ease-in-out);
+
+	&:focus {
+		border: 1px solid map-get( $map: $base_colors, $key: input_focus_border_color );
+	}
+}
+
+
+// Placeholder Style
+
+::input-placeholder {
+	color: map-get( $map: $base_colors, $key: placeholder_color );
+}
+
+::input-placeholder {
+	color: map-get( $map: $base_colors, $key: placeholder_color );
+}
+
+::placeholder {
+	color: map-get( $map: $base_colors, $key: placeholder_color );
+}
+
+input[type="text"]:disabled {
+	background-color: map-get( $map: $base_colors, $key: disabled_input_bgcolor );
+	border: 1px solid map-get( $map: $base_colors, $key: disabled_input_border_color );
+}
+
+input[type="hidden"],
+datalist {
+	display: none;
+}
+
+input[type="file"] {
+	padding: 9px;
+}
+
+// Search Field Style
+
+input[type="search"] {
+	background-image: url( ../img/search-icon.svg );
+	background-repeat: no-repeat;
+	background-position: center right 10px;
+	padding-right: 45px;
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type="search"]::-ms-clear {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+input[type="search"]::-ms-reveal {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+input[type="color"] {
+	border: 1px solid map-get( $map: $base_colors, $key: color_field_border_color );
+	background-color: map-get( $map: $base_colors, $key: color_field_bgcolor );
+	height: 25px;
+	width: 50px;
+	margin: 0 0 20px;
+	padding: 3px;
+	cursor: pointer;
+	appearance: none;
+	box-sizing: border-box;
+}
+
+::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+::-webkit-color-swatch {
+	border: 0;
+	border-radius: 0;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner {
+	border: 0;
+}
+
+::-moz-focus-inner {
+	padding: 0;
+}
+
+
+select {
+	cursor: pointer;
+	appearance: none;
+	background-image: url( ../img/select-icon.svg );
+	background-repeat: no-repeat;
+	background-position: center right 10px;
+}
+
+.ginput_container_multiselect select {
+	min-height: 77px;
+}
+
+textarea {
+	padding: 10px 0 0 10px;
+	height: 150px;
+	resize: none;
+	overflow: auto;
+}
